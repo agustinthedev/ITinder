@@ -1,7 +1,7 @@
-class Offers:
+class Offer:
     OFFER_COMPANY = ""
     OFFER_TITLE = ""
-    OFFER_LOCATION = ""
+    OFFER_LOCATION = "Unknown" # Default position location is Unknown
     OFFER_LINK = ""
     OFFER_DESCRIPTION = ""
 
