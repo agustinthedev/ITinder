@@ -123,9 +123,17 @@ class Sophilabs:
         TO DO: Once all position listings are scraped, generate Offers and upload to site.
 
         '''
-            
+
+    def start(self):
+        self.getListings()
+        self.getDetailedDescriptions()
+        self.generateOffers()            
 
 
+'''
 scraper = Sophilabs()
 scraper.getListings()
 scraper.getDetailedDescriptions()
+scraper.generateOffers()
+scraper.start()
+'''
