@@ -91,6 +91,8 @@ class Sophilabs:
                 for word, replacement in self.replace_list.items():
                     full_description = full_description.replace(word, replacement)
 
+                self.full_descriptions_list.append(full_description)
+
                 with open(f"{i+1}.txt", "a", encoding="utf-8") as file:
                         file.write(full_description)
 
