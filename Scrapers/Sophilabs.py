@@ -5,6 +5,7 @@ from Offers import Offer
 
 class Sophilabs:
 
+    COMPANY_NAME = "Sophilabs"
     SITE_URL = "https://sophilabs.com/careers" # Job listing website
     SHOW_ALL_POSITIONS_BUTTON_XPATH = "//span[text()='Show All Positions']" # 'Show all positions' button so page shows all available positions
     JOBS_TITLES_ELEMENT_XPATH = "//main//section//div//div//ul//li//a//h3" # XPATH for the position title element 
