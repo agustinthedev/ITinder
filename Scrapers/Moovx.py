@@ -5,6 +5,7 @@ from Offers import Offer
 
 class Moovx:
 
+    COMPANY_NAME = "Moovx"
     SITE_URL = "https://moovx.mobi/careers/" # Job listing website 
     JOBS_TITLES_ELEMENT_XPATH = "//div[@id='jobs']//div[@onmouseout=\"this.style.background='#FFFFFF'\"]//div[@class=\"col-5\"]//p" # XPATH for the position title element
     JOBS_LOCATION_ELEMENT_XPATH = "//div[@id='jobs']//div[@onmouseout=\"this.style.background='#FFFFFF'\"]//div[@class=\"col-4\"]//p" # XPATH for the position location element
