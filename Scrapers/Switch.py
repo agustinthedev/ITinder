@@ -23,7 +23,7 @@ class Switch:
     def __init__(self):
         pass
 
-    def getListings():
+    def getListings(self):
         pass
 
     def getDetailedDescriptions(self):
