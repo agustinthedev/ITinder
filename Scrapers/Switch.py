@@ -5,6 +5,7 @@ from Offers import Offer
 
 class Switch:
 
+    COMPANY_NAME = "Switch Software Solutions"
     SITE_URL = "https://switch.hiringroom.com/jobs"
     SHOW_ALL_POSITIONS_BUTTON_XPATH = ""
     JOBS_TITLES_ELEMENT_XPATH = ""
