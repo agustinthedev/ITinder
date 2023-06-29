@@ -151,6 +151,11 @@ class Moovx:
 
         '''
     
+    def start(self):
+        self.getListings()
+        self.getDetailedDescriptions()
+        self.generateOffers()
+    
 
 '''
 scraper = Moovx() # Initialize Class
