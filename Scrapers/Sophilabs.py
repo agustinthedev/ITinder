@@ -17,12 +17,16 @@ class Sophilabs:
     descriptions_links_list = [] # Link to the full description of the position
     full_descriptions_list = [] # Full description of the positions
 
-    replace_list = {"If you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!", "\nIf you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!",
-                    "A Typical Day", "\nA Typical Day\n",
-                    "Qualifications", "\nQualifications\n",
-                    "Preferred qualifications", "\nPreferred qualifications\n",
-                    "We offer", "\nWe offer\n",
-                    "Responsibilities for this position include, but are not limited to:", "\nResponsibilities for this position include, but are not limited to:\n"}
+    replace_list = {"If you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!": "\nIf you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!",
+                    "A Typical Day": "\nA Typical Day:\n",
+                    "Qualifications": "\nQualifications:\n",
+                    "Preferred qualifications": "\nPreferred qualifications:\n",
+                    "We offer": "\nWe offer:\n",
+                    "Responsibilities for this position include, but are not limited to:": "\nResponsibilities for this position include, but are not limited to:\n",
+                    "Responsibilities": "\nResponsibilities:\n",
+                    "Preferred qualifications:\n:": "Preferred qualifications:\n", # In some cases the ":" is already present. This replacement is to avoid duplicating it.
+                    "Qualifications:\n:": "Qualifications:\n", # In some cases the ":" is already present. This replacement is to avoid duplicating it.
+                    "We offer:\n:": "We offer:\n"} # In some cases the ":" is already present. This replacement is to avoid duplicating it.
 
     def __init__(self):
         pass
@@ -83,6 +87,9 @@ class Sophilabs:
                 except Exception as e:
                     print(f"Error while getting full description: {desc_link} - Exception: {e}")
                     full_description = "Unknown."
+
+                for word, replacement in self.replace_list.items():
+                    full_description = full_description.replace(word, replacement)
 
                 with open(f"{i+1}.txt", "a", encoding="utf-8") as file:
                         file.write(full_description)
