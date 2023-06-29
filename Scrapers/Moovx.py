@@ -162,4 +162,5 @@ scraper = Moovx() # Initialize Class
 scraper.getListings() # Start scraping job listings and saving them to lists
 scraper.printListings() # Print all scraped listings (full description not included)
 scraper.getDetailedDescriptions() # Start getting detailed descriptions from URLs scraped before
+scraper.start()
 '''
