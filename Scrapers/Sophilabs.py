@@ -99,6 +99,13 @@ class Sophilabs:
                 sleep(3)
         except Exception as e:
             print(f"Error while getting jobs detailed description: {e}")
+
+    def generateOffers(self):
+        '''
+        
+        TO DO: Once all position listings are scraped, generate Offers and upload to site.
+
+        '''
             
 
 
