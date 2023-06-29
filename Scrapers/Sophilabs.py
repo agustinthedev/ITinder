@@ -137,3 +137,6 @@ scraper.getDetailedDescriptions()
 scraper.generateOffers()
 scraper.start()
 '''
+
+scraper = Sophilabs()
+scraper.start()
