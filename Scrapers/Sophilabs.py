@@ -9,6 +9,7 @@ class Sophilabs:
     JOBS_TITLES_ELEMENT_XPATH = "//main//section//div//div//ul//li//a//h3"
     JOBS_LOCATION_ELEMENT_XPATH = "//main//section//div//div//ul//li//a//h3//em"
     JOBS_FULL_DESCRIPTION_LINK_XPATH = "//main//section//div//div//ul//li//a"
+    JOB_FULL_DESCRIPTION_ELEMENT_XPATH = "//main//section//div//div[3]"
 
     driver = ""
     jobs_list = [] # List of titles for open positions
@@ -16,7 +17,12 @@ class Sophilabs:
     descriptions_links_list = [] # Link to the full description of the position
     full_descriptions_list = [] # Full description of the positions
 
-    replace_list = {}
+    replace_list = {"If you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!", "\nIf you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!",
+                    "A Typical Day", "\nA Typical Day\n",
+                    "Qualifications", "\nQualifications\n",
+                    "Preferred qualifications", "\nPreferred qualifications\n",
+                    "We offer", "\nWe offer\n",
+                    "Responsibilities for this position include, but are not limited to:", "\nResponsibilities for this position include, but are not limited to:\n"}
 
     def __init__(self):
         pass
@@ -43,19 +49,50 @@ class Sophilabs:
 
                     full_job = jobs[i].text
                     title_and_location_list = full_job.split("\n")
-                    location = title_and_location_list[0]
-                    title = title_and_location_list[1]
 
-                    print(f"Title: {title} // Location: {location}")
+                    location = title_and_location_list[0].split(":")[0].title()
+                    title = title_and_location_list[1]
+                    full_description_link = description_links[i].get_attribute("href")
+
+                    self.jobs_list.append(title)
+                    self.locations_list.append(location)
+                    self.descriptions_links_list.append(full_description_link)
+
+                    print(f"Title: {title} // Location: {location} // Link: {full_description_link}")
 
                     
                     
             except Exception as e:
-                print(f"Error 2: {e}")
+                print(f"Error while trying to retrieve listings: {e}")
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"General error: {e}")
+
+    
+    def getDetailedDescriptions(self):
+        try:
+            for i in range(0, len(self.descriptions_links_list)):
+                print(f"- Getting job detailed description ({i+1}/{len(self.descriptions_links_list)}).")
+
+                desc_link = self.descriptions_links_list[i]
+                self.driver.get(desc_link)
+
+                sleep(3)
+
+                try:
+                    full_description = self.driver.find_element(By.XPATH, self.JOB_FULL_DESCRIPTION_ELEMENT_XPATH).text
+                except Exception as e:
+                    print(f"Error while getting full description: {desc_link} - Exception: {e}")
+                    full_description = "Unknown."
+
+                with open(f"{i+1}.txt", "a", encoding="utf-8") as file:
+                        file.write(full_description)
+
+                sleep(3)
+        except Exception as e:
+            print(f"Error while getting jobs detailed description: {e}")
             
 
 
 scraper = Sophilabs()
 scraper.getListings()
+scraper.getDetailedDescriptions()
