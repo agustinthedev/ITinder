@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-from Offers import Offer
+from Util import Offers
 
 class Sophilabs:
 
+    COMPANY_NAME = "Sophilabs"
     SITE_URL = "https://sophilabs.com/careers" # Job listing website
     SHOW_ALL_POSITIONS_BUTTON_XPATH = "//span[text()='Show All Positions']" # 'Show all positions' button so page shows all available positions
     JOBS_TITLES_ELEMENT_XPATH = "//main//section//div//div//ul//li//a//h3" # XPATH for the position title element 
@@ -123,9 +124,20 @@ class Sophilabs:
         TO DO: Once all position listings are scraped, generate Offers and upload to site.
 
         '''
-            
+
+    def start(self):
+        self.getListings()
+        self.getDetailedDescriptions()
+        self.generateOffers()            
 
 
+'''
 scraper = Sophilabs()
 scraper.getListings()
 scraper.getDetailedDescriptions()
+scraper.generateOffers()
+scraper.start()
+'''
+
+scraper = Sophilabs()
+scraper.start()

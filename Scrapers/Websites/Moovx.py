@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-from Offers import Offer
+from Util import Offers
 
 class Moovx:
 
+    COMPANY_NAME = "Moovx"
     SITE_URL = "https://moovx.mobi/careers/" # Job listing website 
     JOBS_TITLES_ELEMENT_XPATH = "//div[@id='jobs']//div[@onmouseout=\"this.style.background='#FFFFFF'\"]//div[@class=\"col-5\"]//p" # XPATH for the position title element
     JOBS_LOCATION_ELEMENT_XPATH = "//div[@id='jobs']//div[@onmouseout=\"this.style.background='#FFFFFF'\"]//div[@class=\"col-4\"]//p" # XPATH for the position location element
@@ -151,10 +152,16 @@ class Moovx:
 
         '''
     
+    def start(self):
+        self.getListings()
+        self.getDetailedDescriptions()
+        self.generateOffers()
+    
 
 '''
 scraper = Moovx() # Initialize Class
 scraper.getListings() # Start scraping job listings and saving them to lists
 scraper.printListings() # Print all scraped listings (full description not included)
 scraper.getDetailedDescriptions() # Start getting detailed descriptions from URLs scraped before
+scraper.start()
 '''
