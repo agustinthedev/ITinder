@@ -15,9 +15,7 @@ class Scraper:
         print(f"{date} - Started Moovx Scraper")
 
         scraper = Moovx.Moovx()
-        scraper.getListings()
-        scraper.getDetailedDescriptions()
-        scraper.generateOffers()
+        scraper.start()
         
         print(f"{date} - Finished Moovx Scraper")
 
