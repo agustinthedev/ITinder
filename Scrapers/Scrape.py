@@ -1,4 +1,4 @@
-from Moovx import Moovx
+from Websites import Moovx
 from datetime import datetime
 
 class Scraper:
