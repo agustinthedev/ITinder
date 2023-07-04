@@ -24,9 +24,9 @@ class FullStackLabs:
                     "What We're Looking For:": "\nWhat We're Looking For:\n",
                     "You'll work with our incredible clients in one of two ways:": "You'll work with our incredible clients in one of two ways:\n",
                     "What we are looking for:": "\nWhat we are looking for:\n",
-                    "Benefits:": "Benefits:\n",
-                    "Our Benefits:": "\nOur Benefits:\n",
-                    "\n\n": "\n",
+                    "Our Benefits:": "\nOur Benefits:",
+                    "Benefits:": "\nBenefits:\n",
+                    "Our \nBenefits:": "Our Benefits:",
                     "Learn more about our Applicants Privacy Notice.": "",
                     "\n\nAPPLY FOR THIS JOB": "",
                     "FullStack is proud to be an equal opportunity workplace. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity, or Veteran status. If you have a disability or special need that requires accommodation, please let us know by completing our Accommodations for Applicants form, which can be provided upon request during our hiring and interview process.": ""}
