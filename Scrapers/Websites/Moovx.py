@@ -140,11 +140,6 @@ class Moovx:
             # Throw error in case of general error
             print(f"Error while getting jobs detailed description: {e}")
 
-    # Print all scraped listings (full description not included)
-    def printListings(self):
-        for i in range(0, len(self.jobs_list)):
-            print(f"{self.jobs_list[i]} // {self.locations_list[i]} // {self.descriptions_links_list[i]}")
-
     def generateOffers(self):
         '''
         
