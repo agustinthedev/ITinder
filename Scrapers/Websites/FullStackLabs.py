@@ -6,10 +6,10 @@ from Util import Offers
 class FullStackLabs:
 
     COMPANY_NAME = "FullStackLabs"
-    SITE_URL = "https://jobs.lever.co/fullstacklabs/?workplaceType=remote"
-    JOBS_TITLES_ELEMENT_XPATH = ""
+    SITE_URL = "https://jobs.lever.co/fullstacklabs/?workplaceType=remote&department=Engineering"
+    JOBS_TITLES_ELEMENT_XPATH = "//a[@class='posting-title']//h5[@data-qa='posting-name']"
     JOBS_LOCATION_ELEMENT_XPATH = ""
-    JOBS_FULL_DESC_BUTTON_ELEMENT_XPATH = ""
+    JOBS_FULL_DESC_BUTTON_ELEMENT_XPATH = "//a[@class='posting-title']"
     JOB_FULL_DESCRIPTION_ELEMENT_XPATH = ""
 
     driver = ""
@@ -24,7 +24,37 @@ class FullStackLabs:
         pass
 
     def getListings(self):
-        pass
+        self.driver = webdriver.Chrome()
+        self.driver.get(self.SITE_URL)
+
+        sleep(3)
+
+        try:
+            jobs = self.driver.find_elements(By.XPATH, self.JOBS_TITLES_ELEMENT_XPATH)
+            description_links = self.driver.find_elements(By.XPATH, self.JOBS_FULL_DESC_BUTTON_ELEMENT_XPATH)
+
+            temp_titles = []
+            temp_desc_links = []
+
+            for i in range(len(jobs)):
+                title = jobs[i].text
+                temp_titles.append(title)
+                print(title)
+
+            for i in range(len(description_links)):
+                description_link = description_links[i].get_attribute("href")
+                temp_desc_links.append(description_link)
+                print(description_link)
+
+            
+
+        except Exception as e:
+            print(e)
+
+        
+
+
+
 
     def getDetailedDescriptions(self):
         pass
@@ -34,3 +64,6 @@ class FullStackLabs:
 
     def start(self):
         pass
+
+scraper = FullStackLabs()
+scraper.getListings()
