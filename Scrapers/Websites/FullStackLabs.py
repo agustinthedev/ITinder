@@ -35,18 +35,27 @@ class FullStackLabs:
 
             temp_titles = []
             temp_desc_links = []
+            repeated_positions = []
 
             for i in range(len(jobs)):
                 title = jobs[i].text
                 temp_titles.append(title)
-                print(title)
 
             for i in range(len(description_links)):
                 description_link = description_links[i].get_attribute("href")
                 temp_desc_links.append(description_link)
-                print(description_link)
 
-            
+            for i in range(0, len(temp_titles)):
+                if "Latin America" in temp_titles[i]:
+                    if temp_titles[i] not in repeated_positions:
+                        repeated_positions.append(temp_titles[i])
+                        self.jobs_list.append(temp_titles[i].replace("- Remote ", ""))
+                        self.locations_list.append("Remote")
+                        self.descriptions_links_list.append(temp_desc_links[i])
+
+                        print(f"{temp_titles[i].replace('- Remote ', '')} // {temp_desc_links[i]}")
+
+            print(f"Total positions: {len(self.jobs_list)} // Total description links: {len(self.descriptions_links_list)}")
 
         except Exception as e:
             print(e)
