@@ -5,7 +5,7 @@ from Util import Offers
 
 class FullStackLabs:
 
-    COMPANY_NAME = "FullStackLabs"
+    COMPANY_NAME = "FullStack Labs"
     SITE_URL = "https://jobs.lever.co/fullstacklabs/?workplaceType=remote&department=Engineering"
     JOBS_TITLES_ELEMENT_XPATH = "//a[@class='posting-title']//h5[@data-qa='posting-name']"
     JOBS_LOCATION_ELEMENT_XPATH = ""
