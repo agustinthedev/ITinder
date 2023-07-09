@@ -1,4 +1,5 @@
 from Websites import Moovx
+from Websites import Sophilabs
 from Websites import FullStackLabs
 from datetime import datetime
 from Util import Offers
@@ -8,6 +9,12 @@ class Scraper:
     scrapers = []
 
     def __init__(self):
+        sophilabs_scraper = Sophilabs.Sophilabs()
+        self.scrapers.append(sophilabs_scraper)
+
+        moovx_scraper = Moovx.Moovx()
+        self.scrapers.append(moovx_scraper)
+
         fullstacklabs_scraper = FullStackLabs.FullStackLabs()
         self.scrapers.append(fullstacklabs_scraper)
 
