@@ -27,6 +27,7 @@ class Sophilabs:
                     "Responsibilities for this position include, but are not limited to:": "\nResponsibilities for this position include, but are not limited to:\n",
                     "Responsibilities": "\nResponsibilities:\n",
                     "Preferred qualifications:\n:": "Preferred qualifications:\n", # In some cases the ":" is already present. This replacement is to avoid duplicating it.
+                    "Preferred \nQualifications:": "\nPreferred Qualifications:",
                     "Qualifications:\n:": "Qualifications:\n", # In some cases the ":" is already present. This replacement is to avoid duplicating it.
                     "We offer:\n:": "We offer:\n"} # In some cases the ":" is already present. This replacement is to avoid duplicating it.
 
