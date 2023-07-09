@@ -1,6 +1,7 @@
 from Websites import Moovx
 from Websites import FullStackLabs
 from datetime import datetime
+from Util import Offers
 
 class Scraper:
     job_data = []
@@ -28,7 +29,14 @@ class Scraper:
             link_list = self.job_data[i]["link_list"]
             full_descriptions = self.job_data[i]["full_descriptions"]
 
-            print(f"{company} \n {job_list} \n {location_list} \n {link_list}")
+            for x in range(len(job_list)):
+                position_title = job_list[x]
+                position_location = location_list[x]
+                position_link = link_list[x]
+                position_description = full_descriptions[x]
+
+                offer = Offers.Offer(company, position_title, position_location, position_link, position_description)
+                offer.loadOffer()
 
 
 scraper = Scraper()
