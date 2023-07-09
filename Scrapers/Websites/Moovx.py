@@ -39,6 +39,8 @@ class Moovx:
                     "Extra project info": "\nExtra project info:\n",
                     "Requirements": "\nRequirements:\n",
                     "About the role": "\nAbout the role:\n",
+                    "Reports to:": "Reports to:\n",
+                    "Objective:": "\nObjective:\n",
                     "What are we looking for?": "\nWhat are we looking for?\n",
                     "That's why we work every day on developing a company culture which reflects how we value our people:": "That's why we work every day on developing a company culture which reflects how we value our people:\n"}
 
