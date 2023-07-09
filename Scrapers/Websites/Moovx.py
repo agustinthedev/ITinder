@@ -126,14 +126,6 @@ class Moovx:
                 # Append description to list
                 self.full_descriptions_list.append(full_description)
 
-                '''
-
-                TO DO: REMOVE THIS WRITE TO FILE, ONLY USED TO DEBUG.
-
-                '''
-                with open(f"{i+1}.txt", "a", encoding="utf-8") as file:
-                    file.write(full_description)
-
                 sleep(3)
         except Exception as e:
             # Throw error in case of general error
