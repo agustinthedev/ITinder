@@ -144,7 +144,8 @@ class Moovx:
         pass
 
     def startScraping(self):
-        pass
+        self.getListings()
+        self.getDetailedDescriptions()
     
 
 '''
