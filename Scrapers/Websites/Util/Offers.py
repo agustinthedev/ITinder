@@ -1,3 +1,5 @@
+from DB import Database
+
 class Offer:
     OFFER_COMPANY = ""
     OFFER_TITLE = ""
@@ -13,8 +15,5 @@ class Offer:
         self.OFFER_DESCRIPTION = description
 
     def loadOffer(self):
-        '''
-        
-        TO DO: SAVE OFFER TO DB.
-
-        '''
+        database = Database()
+        database.addListing(self.OFFER_COMPANY, self.OFFER_TITLE, self.OFFER_LOCATION, self.OFFER_LINK, self.OFFER_DESCRIPTION)
