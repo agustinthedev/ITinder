@@ -123,7 +123,7 @@ class FullStackLabs:
             offer = Offers.Offer(company, title, location, link, description)
             offer.loadOffer()
 
-    def start(self):
+    def getData(self):
         pass
 
 scraper = FullStackLabs()
