@@ -121,9 +121,10 @@ class Sophilabs:
         pass
 
     def startScraping(self):
-        pass
+        self.getListings()
+        self.getDetailedDescriptions()
 
-    
+
 '''
 scraper = Sophilabs()
 scraper.getListings()
