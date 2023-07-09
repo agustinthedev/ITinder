@@ -94,7 +94,7 @@ class Sophilabs:
 
                 # Get job description by using XPATH. Log error and add "Unknown" placeholder to descriptions list in case it fails.
                 try:
-                    full_description = self.driver.find_element(By.XPATH, self.JOB_FULL_DESCRIPTION_ELEMENT_XPATH).text
+                    full_description = self.driver.find_element(By.XPATH, self.JOB_FULL_DESCRIPTION_ELEMENT_XPATH).text.strip()
                 except Exception as e:
                     print(f"Error while getting full description: {desc_link} - Exception: {e}")
                     full_description = "Unknown."
