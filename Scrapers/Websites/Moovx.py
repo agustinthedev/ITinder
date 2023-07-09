@@ -27,6 +27,7 @@ class Moovx:
                     "Qualifications": "\nQualifications:\n",
                     "Responsibilities": "\nResponsibilities:\n",
                     "We expect you to bring your experience working with": "\nWe expect you to bring your experience working with:\n",
+                    "We expect you to bring": "\nWe expect you to bring\n",
                     "About the project": "\nAbout the project:\n",
                     "Required qualifications": "\nRequired qualifications\n",
                     "Even better if you have": "\nEven better if you have:\n",
