@@ -18,15 +18,5 @@ class Scraper:
         for scraper in self.scrapers:
             scraper.getListings()
 
-    def startMoovxScraper(self):
-        date = self.getDateTime()
-
-        print(f"{date} - Started Moovx Scraper")
-
-        scraper = Moovx.Moovx()
-        scraper.start()
-        
-        print(f"{date} - Finished Moovx Scraper")
-
 scraper = Scraper()
 scraper.startScrapers()
