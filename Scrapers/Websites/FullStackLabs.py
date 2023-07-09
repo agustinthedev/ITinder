@@ -122,7 +122,3 @@ class FullStackLabs:
         }
 
         return data
-
-scraper = FullStackLabs()
-scraper.getListings()
-scraper.getDetailedDescriptions()
