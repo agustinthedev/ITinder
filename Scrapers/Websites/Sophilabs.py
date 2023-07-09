@@ -62,7 +62,7 @@ class Sophilabs:
                     full_job = jobs[i].text
                     title_and_location_list = full_job.split("\n") # full_job gets title AND location combined, splitting in order to get them separated
 
-                    location = title_and_location_list[0].split(":")[0].title() # Job location (Remove countries)
+                    location = title_and_location_list[0].title() # Job location
                     title = title_and_location_list[1] # Job title
                     full_description_link = description_links[i].get_attribute("href") # Get position full description link
 
