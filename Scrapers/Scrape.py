@@ -3,7 +3,7 @@ from Websites import FullStackLabs
 from datetime import datetime
 
 class Scraper:
-    data = []
+    job_data = []
     scrapers = []
 
     def __init__(self):
@@ -17,6 +17,9 @@ class Scraper:
     def startScrapers(self):
         for scraper in self.scrapers:
             scraper.startScraping()
+            data = scraper.getData()
+            self.job_data.append(data)
+            print(self.job_data)
 
 scraper = Scraper()
 scraper.startScrapers()
