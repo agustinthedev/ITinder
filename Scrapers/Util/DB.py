@@ -36,5 +36,8 @@ class Database:
     def getListings(self):
         pass
 
+    def removeListing(self, link):
+        pass
+
 db = Database()
 db.addListing("Google", "QA", "Remote", "https://jobs.lever.co/fullstacklabs/ac6e1b5f-2ad5-4564-baac-cf1489a1f23d", "test")
