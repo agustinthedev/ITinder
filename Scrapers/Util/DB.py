@@ -23,13 +23,23 @@ class Database:
         #query = "INSERT INTO job_listings (id, company, title, location, link, description) VALUES (NULL, %s, %s, %s, %s, %s)"
         #values = (company, title, location, link, description)
 
-        query = "SELECT id FROM job_listings WHERE link = 'https://jobs.lever.co/fullstacklabs/ac6e1b5f-2ad5-4564-baac-cf1489a1f23d'"
+        query = "SELECT id FROM job_listings WHERE link=%s"
 
-        self.cursor.execute(query)
+        self.cursor.execute(query, (link,))       
+        row = self.cursor.fetchone()
 
-        for x in self.cursor:
-            print(x)
-        #self.db.commit()
+        if row is None:
+            print("Doesn't exist")
+
+            insert_query = "INSERT INTO job_listings (id, company, title, location, link, description) VALUES (NULL, %s, %s, %s, %s, %s)"
+            insert_values = (company, title, location, link, description)
+
+            self.cursor.execute(insert_query, insert_values)
+            self.db.commit()
+
+            print("Inserted one unique value")
+        else:
+            print(f"{link} already exists in database ")
 
         #print("Inserted new job listing into 'job_listings' table.")
 
