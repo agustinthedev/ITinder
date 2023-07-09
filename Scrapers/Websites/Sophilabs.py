@@ -20,7 +20,7 @@ class Sophilabs:
 
     # Dictionary to replace words/phrases in the full position description
     replace_list = {"If you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!": "\nIf you share our commitment to delivering excellent client-focused service and putting customers first, enjoy working in teams, and are always looking to improve, join us!",
-                    "A Typical Day": "\nA Typical Day:\n",
+                    "A Typical Day": "A Typical Day:\n",
                     "Qualifications": "\nQualifications:\n",
                     "Preferred qualifications": "\nPreferred qualifications:\n",
                     "We offer": "\nWe offer:\n",
