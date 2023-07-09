@@ -121,12 +121,13 @@ class FullStackLabs:
             print(f"Error while getting jobs detailed description: {e}")
 
     def generateOffers(self):
-        '''
-        
-        TO DO: Once all position listings are scraped, generate Offers and upload to site.
-
-        '''
-        pass
+        for i in range(self.jobs_list):
+            company = self.COMPANY_NAME
+            title = self.jobs_list[i]
+            location = self.locations_list[i]
+            link = self.descriptions_links_list[i]
+            description = self.descriptions_links_list
+            print(f"{company} // {title} // {location} // {link} // {description}")
 
     def start(self):
         pass
@@ -134,3 +135,4 @@ class FullStackLabs:
 scraper = FullStackLabs()
 scraper.getListings()
 scraper.getDetailedDescriptions()
+scraper.generateOffers()
