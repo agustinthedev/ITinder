@@ -139,17 +139,12 @@ class Moovx:
             # Throw error in case of general error
             print(f"Error while getting jobs detailed description: {e}")
 
-    def generateOffers(self):
-        '''
-        
-        TO DO: Once all position listings are scraped, generate Offers and upload to site.
 
-        '''
-    
-    def start(self):
-        self.getListings()
-        self.getDetailedDescriptions()
-        self.generateOffers()
+    def getData(self):
+        pass
+
+    def startScraping(self):
+        pass
     
 
 '''
