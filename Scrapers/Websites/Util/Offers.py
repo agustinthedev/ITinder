@@ -1,4 +1,4 @@
-from DB import Database
+from .DB import Database
 
 class Offer:
     OFFER_COMPANY = ""
