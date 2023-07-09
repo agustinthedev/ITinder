@@ -16,7 +16,7 @@ class Scraper:
     
     def startScrapers(self):
         for scraper in self.scrapers:
-            scraper.getListings()
+            scraper.startScraping()
 
 scraper = Scraper()
 scraper.startScrapers()

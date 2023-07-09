@@ -122,3 +122,10 @@ class FullStackLabs:
         }
 
         return data
+    
+    def startScraping(self):
+        self.getListings()
+        self.getDetailedDescriptions()
+        data = self.getData()
+        
+        return data
