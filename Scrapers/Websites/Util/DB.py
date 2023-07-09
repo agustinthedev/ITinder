@@ -27,6 +27,3 @@ class Database:
         self.db.commit()
 
         print("Inserted new job listing into 'job_listings' table.")
-
-database = Database()
-database.addListing("Google", "QA Engineer 4", "Remote", "https://careers.google.com/some-test-example", "This is a description example for a well known position in the IT industry.")
