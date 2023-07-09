@@ -118,7 +118,15 @@ class Sophilabs:
             print(f"Error while getting jobs detailed description: {e}")
 
     def getData(self):
-        pass
+        data = {
+            "company": self.COMPANY_NAME,
+            "job_list": self.jobs_list,
+            "location_list": self.locations_list,
+            "link_list": self.descriptions_links_list,
+            "full_descriptions": self.full_descriptions_list
+        }
+
+        return data
 
     def startScraping(self):
         self.getListings()
