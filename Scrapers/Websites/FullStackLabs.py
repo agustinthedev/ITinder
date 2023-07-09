@@ -112,17 +112,6 @@ class FullStackLabs:
             # Throw error in case of general error
             print(f"Error while getting jobs detailed description: {e}")
 
-    def generateOffers(self):
-        for i in range(len(self.jobs_list)):
-            company = self.COMPANY_NAME
-            title = self.jobs_list[i]
-            location = self.locations_list[i]
-            link = self.descriptions_links_list[i]
-            description = self.full_descriptions_list[i]
-            
-            offer = Offers.Offer(company, title, location, link, description)
-            offer.loadOffer()
-
     def getData(self):
         data = {
             "company": self.COMPANY_NAME,
