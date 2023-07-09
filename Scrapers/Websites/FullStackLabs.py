@@ -126,4 +126,3 @@ class FullStackLabs:
 scraper = FullStackLabs()
 scraper.getListings()
 scraper.getDetailedDescriptions()
-scraper.generateOffers()
